@@ -1,0 +1,458 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="652c90">
+  <script src="../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>QHub for Admins &#8212; QHub Code as Infrastructure.</title>
+    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+
+  
+   
+
+<style>
+  .md-header, .md-tabs {background-color: #653c90}
+</style>
+  </head>
+  <body dir=ltr
+        data-md-color-primary=652c90 data-md-color-accent=light-yellow>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#docs/producers" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../index.html" title="QHub Code as Infrastructure."
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">QHub</span>
+          <span class="md-header-nav__topic"> QHub for Admins </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../search.html" method="GET" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            <a href="https://github.com/Quansight/qhub" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    QHub
+  </div>
+</a>
+          </div>
+        </div>
+      
+      
+  
+  <script src="../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../"versions.json"",
+        target_loc = "../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">QHub Code as Infrastructure.</a></li>
+            
+            <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">QHub Home</a></li>
+            
+            <li class="md-tabs__item"><a href="https://pypi.org/project/qhub/" class="md-tabs__link">Pypi</a></li>
+            
+            <li class="md-tabs__item"><a href="faqs.html" class="md-tabs__link">FAQ</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../index.html" title="QHub Code as Infrastructure." class="md-nav__button md-logo">
+      
+        <img src="../_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../index.html"
+       title="QHub Code as Infrastructure.">QHub</a>
+  </label>
+    <div class="md-nav__source">
+      <a href="https://github.com/Quansight/qhub" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    QHub
+  </div>
+</a>
+    </div>
+  
+  
+
+  
+  <ul class="md-nav__list">
+    <li class="md-nav__item">
+    
+    
+      <a href="step-by-step-walkthrough.html" class="md-nav__link">Step-by-Step QHub Cloud Deployment</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="do/configuration.html" class="md-nav__link">Configuration</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="do/configuration.html#full-configuration-example" class="md-nav__link">Full Configuration Example</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="do/configuration.html#initializing-repository" class="md-nav__link">Initializing Repository</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="faqs.html" class="md-nav__link">Frequently Asked Questions (FAQ)</a>
+      
+    
+    </li>
+  </ul>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#docs-producers--page-root" class="md-nav__link"><strong>QHub for Admins</strong></a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#installation" class="md-nav__link">Installation</a>
+        </li>
+        <li class="md-nav__item"><a href="#configuration" class="md-nav__link">Configuration</a>
+        </li>
+        <li class="md-nav__item"><a href="#why-qhub" class="md-nav__link">Why QHub</a>
+        </li>
+        <li class="md-nav__item"><a href="#staging-production-environments-and-shell-access" class="md-nav__link">Staging & Production Environments and Shell Access</a>
+        </li>
+        <li class="md-nav__item"><a href="#qhub-architecture" class="md-nav__link">QHub Architecture</a>
+        </li>
+        <li class="md-nav__item"><a href="#cloud-deployment-on-qhub" class="md-nav__link">Cloud Deployment on QHub</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#infrastructure-provisioning-common-for-all-clouds" class="md-nav__link">Infrastructure Provisioning (Common for all Clouds)</a>
+        </li>
+        <li class="md-nav__item"><a href="#kubernetes-common-for-all-clouds" class="md-nav__link">Kubernetes (Common for all Clouds)</a>
+        </li>
+        <li class="md-nav__item"><a href="#ssl-and-ingress-common-for-all-clouds" class="md-nav__link">SSL and Ingress (Common for all Clouds)</a>
+        </li>
+        <li class="md-nav__item"><a href="#aws-deployment" class="md-nav__link">AWS Deployment</a>
+        </li>
+        <li class="md-nav__item"><a href="#do-deployment" class="md-nav__link">DO Deployment</a>
+        </li>
+        <li class="md-nav__item"><a href="#gcp-deployment" class="md-nav__link">GCP Deployment</a>
+        </li>
+        <li class="md-nav__item"><a href="#autoscaling" class="md-nav__link">Autoscaling</a>
+        </li>
+        <li class="md-nav__item"><a href="#authentication" class="md-nav__link">Authentication</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/docs/producers.md.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<h1 id="docs-producers--page-root"><strong>QHub for Admins</strong><a class="headerlink" href="#docs-producers--page-root" title="Permalink to this headline">¶</a></h1>
+<p>QHub admins are <strong>DevOps engineers</strong>, <strong>system administrators</strong>, <strong>scientists</strong>, and <strong>network architects</strong> who are responsible for the critical infrastructure that data scientists and engineers need to thrive. QHub is bundled with features that make installation easy while providing the ability to scale with your organization and data.</p>
+<blockquote>
+<div><p>The content below is particularly for QHub producers and those looking to learn more about the QHub architecture.</p>
+</div></blockquote>
+
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>You can install QHub through <code class="docutils literal notranslate"><span class="pre">pip</span></code>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install qhub-ops
+</pre></div>
+</div>
+<p>After the installation, the next step is to configure QHub.</p>
+
+
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p>QHub is entirely controlled from a configuration file, which allows you to manage multiple environments and multiple teams, as well as their permissions and authorization in a robust way.</p>
+<ul class="simple">
+<li><p><strong>The Configuration File</strong></p>
+<ul>
+<li><p>QHub comes with configuration file templates for each of the cloud providers it currently supports: <strong>AWS</strong>, <strong>DO</strong>, and <strong>GCP</strong>. The templates can be found <a class="reference external" href="%27#%27"><strong>here</strong></a>.</p></li>
+</ul>
+</li>
+</ul>
+
+
+<h2 id="why-qhub">Why QHub<a class="headerlink" href="#why-qhub" title="Permalink to this headline">¶</a></h2>
+<p>With QHub, managing configurable data science environments and attaining seamless deployment with <a class="reference external" href="https://github.com/marketplace/actions/deployment-action"><strong>Github Actions</strong></a> become remarkably easy. Let’s look at how you can customize QHub for a data science architecture that meets  <strong>your team’s needs</strong>.</p>
+
+
+<h2 id="staging-production-environments-and-shell-access">Staging &amp; Production Environments and Shell Access<a class="headerlink" href="#staging-production-environments-and-shell-access" title="Permalink to this headline">¶</a></h2>
+<p>With QHub, you can have shell access and remote editing access through KubeSSH. The complete linux style permissions allows for different shared folders for different groups of users.</p>
+<p>QHub comes with staging and production environments, as well as JupyterHub deploys.</p>
+
+
+<h2 id="qhub-architecture">QHub Architecture<a class="headerlink" href="#qhub-architecture" title="Permalink to this headline">¶</a></h2>
+<p>In addition to a robust integration of <a class="reference external" href="https://dask.org/"><strong>Dask</strong></a> and a new way of distributing environments with <a class="reference external" href="https://github.com/quansight/conda-store"><strong>conda-store</strong></a>, QHub brings together some of the widely used cloud deployment components in its architecture.</p>
+<p>QHub integrates <a class="reference external" href="https://en.wikipedia.org/wiki/Network_File_System"><strong>Network File System (NFS)</strong></a> protocol is used to allow Kubernetes applications to access storage. Files in containers in a <a class="reference external" href="https://kubernetes.io/docs/concepts/workloads/pods/pod/"><strong>Kubernetes Pod</strong></a> are not persistent, which means if a container crashes, <a class="reference external" href="https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/#:~:text=Synopsis,object%20that%20describes%20a%20pod"><strong>kubelet</strong></a> will restart the container, however, the files will not be preserved. The <a class="reference external" href="https://kubernetes.io/docs/concepts/storage/volumes/#types-of-volumes"><strong>Kubernetes Volume</strong></a> abstraction that QHub utilizes solves this problem.</p>
+<p>NFS shares files directly from a container in a Kubernetes Pod, and sets up a <a class="reference external" href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/"><strong>Kubernetes Persistent Volume</strong></a> accessed via NFS. Kubernetes’ built‑in configuration for HTTP load balancing <a class="reference external" href="https://kubernetes.io/docs/concepts/services-networking/ingress/"><strong>Ingress</strong></a> defines and controls the rules for external connectivity to Kubernetes services. Users who need to provide external access to their Kubernetes services create an Ingress resource that defines rules.</p>
+<p>QHub streamlines and manages all the Kubernetes architecture detailed above and delivers a smooth deployment process to its users through its intuitive interface.
+<img alt="QHub_Architecture" src="../_images/high_level_architecture.png"/></p>
+<p>QHub architecture and features allows you to:</p>
+<ul class="simple">
+<li><p>manage configurable data science environments</p></li>
+<li><p>handle multiple environments in a robust way</p></li>
+<li><p>have seamless deployment with github actions</p></li>
+<li><p>meet the needs of multiple teams and control permissions</p></li>
+</ul>
+
+
+<h2 id="cloud-deployment-on-qhub">Cloud Deployment on QHub<a class="headerlink" href="#cloud-deployment-on-qhub" title="Permalink to this headline">¶</a></h2>
+<p>QHub deployments on the clouds follow the architectural structure shown for ech provider in the diagrams below. To make cloud deployments, the respective configuration file needs to be configured based on the user’s cloud provider account credentials, as well as the details of users they would allow access to the deployment.</p>
+
+<h3 id="infrastructure-provisioning-common-for-all-clouds">Infrastructure Provisioning (Common for all Clouds)<a class="headerlink" href="#infrastructure-provisioning-common-for-all-clouds" title="Permalink to this headline">¶</a></h3>
+<p>To provision the infrastructure, QHub use <a class="reference external" href="https://www.terraform.io/"><strong>Terraform</strong></a>, a tool for building, changing, and versioning infrastructure safely and efficiently. Terraform enables QHub to have Infrastructure as Code to provision and manage cloud, infrastructure or service. Terraform has a system of modules/provider for dealing with various cloud providers and various kinds of infrastructure, for instance it has modules for <a class="reference external" href="https://aws.amazon.com/"><strong>Amazon Web Services (AWS)</strong></a>, <a class="reference external" href="https://cloud.google.com/gcp/?utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=na-US-all-en-dr-bkws-all-all-trial-e-dr-1009135&amp;utm_content=text-ad-lpsitelinkCCexp2-any-DEV_c-CRE_113120492887-ADGP_Hybrid+%7C+AW+SEM+%7C+BKWS+%7C+US+%7C+en+%7C+EXA+~+Google+Cloud+Platform-KWID_43700009942847400-kwd-26415313501&amp;utm_term=KW_google%20cloud%20platform-ST_google+cloud+platform&amp;gclid=CjwKCAjw9vn4BRBaEiwAh0muDLoAixDimMW9Sq12jfyBy6dMzxOU7ZW6-w44qWTJo-zRdpnBojzbexoCNGsQAvD_BwE"><strong>Google Cloud Platform (GCP)</strong></a>, <a class="reference external" href="https://www.digitalocean.com/"><strong>Digital Ocean (DO)</strong></a>, as well as for <a class="reference external" href="https://kubernetes.io/"><strong>Kubernetes</strong></a> and <a class="reference external" href="https://helm.sh/"><strong>Helm</strong></a>.</p>
+
+
+<h3 id="kubernetes-common-for-all-clouds">Kubernetes (Common for all Clouds)<a class="headerlink" href="#kubernetes-common-for-all-clouds" title="Permalink to this headline">¶</a></h3>
+<p>To manage the deployments on the Kubernetes cluster, QHub use Helm, a package manager for Kubernetes. Helm packages Kubernetes configurations for deployment for ease of distribution so that you can simply use a ready made package and deploy it to your Kubernetes cluster.</p>
+<p>The services are exposed via an <a class="reference external" href="https://kubernetes.io/docs/concepts/services-networking/ingress/"><strong>Ingress</strong></a> component of Kubernetes. Helm uses a packaging format called <a class="reference external" href="https://helm.sh/docs/topics/charts/"><strong>Charts</strong></a>, which is a collection of files that describe a related set of Kubernetes resources. Charts can be packaged into versioned archives to be deployed. They are also easy to rollback.</p>
+<p>The <a class="reference external" href="https://github.com/hashicorp/terraform-provider-helm"><strong>Helm provider of Terraform</strong></a> takes the overrides supported by Helm. This makes it easier to use a standard chart with custom settings, such as a custom image.</p>
+<p>For JupyterHub and Dask, QHub uses the official Helm Charts and provide custom settings, which can be seen in: <code class="docutils literal notranslate"><span class="pre">dask-gateway.yaml</span></code> and <code class="docutils literal notranslate"><span class="pre">jupyterhub.yaml</span></code>, also with custom images, which are stored in respective container registry of the cloud provider uses.</p>
+
+
+<h3 id="ssl-and-ingress-common-for-all-clouds">SSL and Ingress (Common for all Clouds)<a class="headerlink" href="#ssl-and-ingress-common-for-all-clouds" title="Permalink to this headline">¶</a></h3>
+<p>To expose various services, such as the JupyterHub and Dask, present in the Kubernetes Cluster, QHub uses the <a class="reference external" href="https://kubernetes.github.io/ingress-nginx/"><strong>NGINX</strong></a>, which is a reverse proxy and load balancer. There is a standard component for using NGINX to expose services defined in Kubernetes Cluster, known as <a class="reference external" href="https://github.com/kubernetes/ingress-nginx"><strong>NGINX Ingress Controller</strong></a>. QHub uses the official helm charts of the same to implement Ingress for its Kubernetes Cluster.</p>
+<p><a class="reference external" href="https://www.ssl.com/faqs/faq-what-is-ssl/"><strong>SSL</strong></a> is a crucial part of any service exposed to the Internet. To handle this in Kubernetes, QHub utilizes <a class="reference external" href="https://github.com/jetstack/cert-manager"><strong>cert manager</strong></a>, a popular Kubernetes add-on to automate the management and issuance of TLS certificates from various issuing sources.</p>
+
+
+<h3 id="aws-deployment">AWS Deployment<a class="headerlink" href="#aws-deployment" title="Permalink to this headline">¶</a></h3>
+<p>The configuration file template for AWS can be found at the following path:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>tests/assets/config_aws.yaml
+</pre></div>
+</div>
+<p>The architecture of AWS uses <a class="reference external" href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html"><strong>Virtual Private Cloud (VPC)</strong></a>, which enables you to launch resources into a virtual network. The VPC is the logically isolated section of AWS, which enables you to control how your network and AWS resources inside your network are exposed to the Internet. There are subnets inside the VPC in multiple availability zones. The Kubernetes Cluster is inside the VPC, which by default isolates it from the internet by the very nature of VPC.</p>
+<p>QHub uses AWS’s managed Kubernetes service: <a class="reference external" href="https://aws.amazon.com/eks/"><strong>Elastic Kubernetes Service (EKS)</strong></a> to create a Kubernetes Cluster. Since VPC is an isolated part of the AWS, you need a way to expose the services running inside the Kubernetes to the Internet, so that others can access it. This is achieved by an <a class="reference external" href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html"><strong>Internet Gateway</strong></a>. It’s a VPC component that allows communication between the VPC and the Internet.</p>
+<p><span class="xref myst">QHub AWS Architecture</span></p>
+
+
+<h3 id="do-deployment">DO Deployment<a class="headerlink" href="#do-deployment" title="Permalink to this headline">¶</a></h3>
+<p>The configuration file template for Digital Ocean can be found at the following path:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>tests/assets/config_do.yaml
+</pre></div>
+</div>
+<p><span class="xref myst">QHub DO Architecture</span></p>
+
+
+<h3 id="gcp-deployment">GCP Deployment<a class="headerlink" href="#gcp-deployment" title="Permalink to this headline">¶</a></h3>
+<p>The configuration file template for GCP can be found at the following path:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>tests/assets/config_gcp.yaml
+</pre></div>
+</div>
+<p><span class="xref myst">QHub GCP Architecture</span></p>
+
+
+<h3 id="autoscaling">Autoscaling<a class="headerlink" href="#autoscaling" title="Permalink to this headline">¶</a></h3>
+<p>With QHub, system admins can customize and maintain their teams’ compute needs and environments. The autoscaling of computers (Kubernetes and Pods) is done through Dask autoscaling with CPU &amp; GPU workers.</p>
+
+
+<h3 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline">¶</a></h3>
+<p>QHub uses Github for authentication.</p>
+<div class="toctree-wrapper compound">
+</div>
+
+
+
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright .
+              
+          </div>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>
